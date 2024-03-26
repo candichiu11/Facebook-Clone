@@ -10,33 +10,30 @@ function StoryReel() {
   const getRandomImage = () => {
     const width = 200; // Desired width of the image
     const height = 300; // Desired height of the image
-    const randomImageUrl = `https://picsum.photos/${width}/${height}`;
+    const randomImageUrl = `https://picsum.photos/${width}/${height}?random=${Math.random()}`;
     return randomImageUrl;
   };
-
-  // Use the getRandomImage function to get a random image URL
-  const randomImage = getRandomImage();
 
   return (
     <div className='storyReel'>
     <Story 
-    image={randomImage}
+    image={getRandomImage()}
     profileSrc={user.photoURL}
     title={user.displayName}/>
     <Story 
-    image={randomImage}
+    image={getRandomImage()}
     profileSrc={user.photoURL}
     title="Candi Chiu"/>
     <Story 
-    image={randomImage}
+    image={getRandomImage()}
     profileSrc={user.photoURL}
     title="Candi Chiu"/>
     <Story 
-    image={randomImage}
+    image={getRandomImage()}
     profileSrc={user.photoURL}
     title="Candi Chiu"/>
     <Story 
-    image={randomImage}
+    image={getRandomImage()}
     profileSrc={user.photoURL}
     title="Candi Chiu"/>
    
