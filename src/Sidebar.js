@@ -8,14 +8,16 @@ import StorefrontIcon from '@mui/icons-material/Storefront';
 import VideoLibraryIcon from '@mui/icons-material/VideoLibrary';
 import ExpandMoreOutlinedIcon from '@mui/icons-material/ExpandMoreOutlined';
 import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
-import candi from "./images/Candi.jpeg"
+import { useStateValue } from './StateProvider';
 
 function Sidebar() {
+  const [{ user }, dispatch] = useStateValue();
+
   return (
     <div className="sidebar">
         <SidebarRow 
-        src={candi}
-        title="Candi Chiu"/>
+        src={user.photoURL}
+        title={user.displayName}/>
         <SidebarRow 
         Icon={LocalHospitalIcon} 
         title="Covid-19 Information Center"/>

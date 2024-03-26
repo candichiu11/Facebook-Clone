@@ -1,11 +1,11 @@
 import React from 'react'
 import "./StoryReel.css"
 import Story from './Story'
-import candi from "./images/Candi.jpeg"
-
+import { useStateValue } from './StateProvider';
 
 
 function StoryReel() {
+  const [{ user }, dispatch] = useStateValue();
     // Generate a random image URL using the picsum.photos API
   const getRandomImage = () => {
     const width = 200; // Desired width of the image
@@ -21,23 +21,23 @@ function StoryReel() {
     <div className='storyReel'>
     <Story 
     image={randomImage}
-    profileSrc={candi}
+    profileSrc={user.photoURL}
+    title={user.displayName}/>
+    <Story 
+    image={randomImage}
+    profileSrc={user.photoURL}
     title="Candi Chiu"/>
     <Story 
     image={randomImage}
-    profileSrc={candi}
+    profileSrc={user.photoURL}
     title="Candi Chiu"/>
     <Story 
     image={randomImage}
-    profileSrc={candi}
+    profileSrc={user.photoURL}
     title="Candi Chiu"/>
     <Story 
     image={randomImage}
-    profileSrc={candi}
-    title="Candi Chiu"/>
-    <Story 
-    image={randomImage}
-    profileSrc={candi}
+    profileSrc={user.photoURL}
     title="Candi Chiu"/>
    
       
